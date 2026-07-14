@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CapMinds - Appointment Scheduler</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="card">
+<header>
+<div class="logo"><span class="dot"></span>CAPMINDS</div>
+<button class="btn-primary" id="openModal">+ Book Appointment</button>
+</header>
+</div>
+
+<div class="card">
+<div class="cal-nav">
+<button id="prevBtn">&lt;</button>
+<div class="month-label" id="monthLabel"></div>
+<button id="todayBtn">Today</button>
+<button id="nextBtn">&gt;</button>
+</div>
+<div class="grid" id="calGrid"></div>
+</div>
+
+<div class="card">
+<h3 style="margin-bottom:10px;">Appointment Details</h3>
+<div class="filters">
+<input id="searchPatient" placeholder="Search by Patient Name">
+<input id="searchDoctor" placeholder="Search by Doctor Name">
+<input id="filterFrom" type="date">
+<input id="filterTo" type="date">
+</div>
+<div style="overflow-x:auto;">
+<table>
+<thead><tr><th>Patient</th><th>Doctor</th><th>Hospital</th><th>Specialty</th><th>Date</th><th>Time</th><th>Action</th></tr></thead>
+<tbody id="apptTableBody"></tbody>
+</table>
+</div>
+</div>
+
+<div class="overlay" id="overlay">
+<div class="modal">
+<h3 id="modalTitle">Schedule Appointment</h3>
+<div class="row">
+<div><label>Patient Name</label><input id="f_patient"><div class="err">Required</div></div>
+<div><label>Doctor Name</label><input id="f_doctor"><div class="err">Required</div></div>
+</div>
+<div class="row">
+<div><label>Hospital Name</label><input id="f_hospital"><div class="err">Required</div></div>
+<div><label>Specialty</label><input id="f_specialty"><div class="err">Required</div></div>
+</div>
+<div class="row">
+<div><label>Date</label><input id="f_date" type="date"><div class="err">Required</div></div>
+<div><label>Time</label><input id="f_time" type="time"><div class="err">Required</div></div>
+</div>
+<label>Reason</label><textarea id="f_reason" rows="2"></textarea>
+<input type="hidden" id="f_id">
+<div class="actions">
+<button class="btn-cancel" id="cancelBtn">Cancel</button>
+<button class="btn-primary" id="saveBtn">Save</button>
+</div>
+</div>
+</div>
+
+<script src="../js/script.js"></script>
+</body>
+</html>
